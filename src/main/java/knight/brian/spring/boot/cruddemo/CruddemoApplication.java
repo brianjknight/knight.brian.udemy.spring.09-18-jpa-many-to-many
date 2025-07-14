@@ -23,11 +23,8 @@ public class CruddemoApplication {
 	public CommandLineRunner commandLineRunner(AppDAO appDAO) {
 
 		return runner -> {
+			// ManyToMany methods
 
-			// @OneToMany Uni-directional methods
-//			createCourseAndReviews(appDAO);
-//			retrieveCourseAndReviews(appDAO);
-			deleteCourseAndReviews(appDAO);
 		};
 	}
 
