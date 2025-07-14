@@ -25,8 +25,31 @@ public class CruddemoApplication {
 
 		return runner -> {
 			// ManyToMany methods
-			createCourseAndStudents(appDAO);
+//			createCourseAndStudents(appDAO);
+//			findCourseAndStudents(appDAO);
+			findStudentAndCourses(appDAO);
 		};
+	}
+
+	private void findStudentAndCourses(AppDAO appDAO) {
+		int theId = 2;
+		Student tempStudent = appDAO.findStudentAndCoursesByStudentId(theId);
+
+		System.out.println("Loaded student: " + tempStudent);
+		System.out.println("Courses for student: " + tempStudent.getCourses());
+
+		System.out.println("Done!");
+
+	}
+
+	private void findCourseAndStudents(AppDAO appDAO) {
+
+		int id = 100;
+		Course tempCourse = appDAO.findCourseAndStudentsByCourseId(id);
+
+		System.out.println("Loaded course: " + tempCourse);
+		System.out.println("Students for course: " + tempCourse.getStudents());
+		System.out.println("done");
 	}
 
 	private void createCourseAndStudents(AppDAO appDAO) {

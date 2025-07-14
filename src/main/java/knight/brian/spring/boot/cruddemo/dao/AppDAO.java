@@ -3,6 +3,7 @@ package knight.brian.spring.boot.cruddemo.dao;
 import knight.brian.spring.boot.cruddemo.entity.Course;
 import knight.brian.spring.boot.cruddemo.entity.Instructor;
 import knight.brian.spring.boot.cruddemo.entity.InstructorDetail;
+import knight.brian.spring.boot.cruddemo.entity.Student;
 
 import java.util.List;
 
@@ -34,4 +35,8 @@ public interface AppDAO {
     void save(Course course);
 
     Course findCourseAndReviewsByCourseId(int id);
+
+    Course findCourseAndStudentsByCourseId(int id);
+
+    Student findStudentAndCoursesByStudentId(int id);
 }
